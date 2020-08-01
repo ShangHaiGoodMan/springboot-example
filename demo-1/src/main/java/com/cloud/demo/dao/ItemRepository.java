@@ -1,12 +1,15 @@
-package com.cloud.demo2.dao;
+package com.cloud.demo.dao;
 
 import java.util.List;
 
-import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
-import com.cloud.demo2.model.Item;
+import com.cloud.demo.domain.Item;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.repository.CrudRepository;
 
-public interface ItemRepository extends ElasticsearchRepository<Item, Long> {
+public interface ItemRepository extends CrudRepository<Item, Long>, JpaRepository<Item, Long>,
+		JpaSpecificationExecutor<Item> {
 	
-	 List<Item> findByPriceBetween(double price1, double price2);
+	 List<Item> findByName(String name);
 }

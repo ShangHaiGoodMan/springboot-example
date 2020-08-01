@@ -1,0 +1,10 @@
+server:
+  port: 8080
+
+
+          
+spring:
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 47.100.116.127:9300 # 程序连接es的端口号是9300
